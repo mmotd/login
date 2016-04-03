@@ -4,7 +4,7 @@ Usage:
 
 var login = require('./login');
 
-login.init(<firebase url>);
+login.init(firebase_url);
 
 myForm.on('submit', function(e){
   e.preventDefault();
