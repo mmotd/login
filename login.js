@@ -85,8 +85,8 @@ var Firebase = require('firebase');
     //This does not authenticate the user... ref.authWithPassword() must be called after.
     ref.createUser({ email: email, password: password }, function(error, authData){
       if (!error){
+        emailLogin(email, password);
         saveUser(authData, email.replace(/@.*/, ''));
-        emailLogin(email, password)
       }
       else{
         console.log('yay')
