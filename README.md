@@ -1,4 +1,4 @@
-# mmotdrpg
+# login
 
 Usage:
 
