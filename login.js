@@ -2,8 +2,6 @@ var Firebase = require('firebase');
 
   var ref;
   
-  //console.log(ref)
-  
   function init(url, handler){
     ref = new Firebase(url);
     
