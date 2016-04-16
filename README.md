@@ -15,7 +15,7 @@ For bundling
 include "bundle.js" in index.html file
 
 Serve can be used for quickly running a web server (port 8080 necessary for c9)
-    `npm i server1`
+    `npm i serve`
     `serve -p 8080`
 
 ## Usage:
