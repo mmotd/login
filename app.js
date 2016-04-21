@@ -1,3 +1,4 @@
+var bootstrap = require('bootstrap');
 var login = require('./login');
 
 login.init('http://mmotd-login.firebaseio.com');
