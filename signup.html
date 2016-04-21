@@ -9,15 +9,22 @@
 <nav class="pull-right">
     <button id="logout" class="btn btn-xs btn-default">Sign out</button>
 </nav>
-<a href="index.html">Home</a>
+<nav>
+    <a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a>
+</nav>
 
-<br>
-<h2>Create account</h2>
-<form id="signup-form" class="form">
-    <input type="text" name="signup-email" placeholder="Enter your email"/><br>
-    <input type="password" name="signup-password" placeholder="Password"/><br>
-    <button type="submit">Create account</button>
-</form>
+<div class="panel" style="display: table; margin: 0 auto; text-align: center; background: #eee">
+    <div class="panel-heading">
+        Create account
+    </div>
+    <div class="panel-body">
+        <form id="signup-form" class="form">
+            <input type="text" name="signup-email" class="form-control" Enter your email"/><br>
+            <input type="password" name="signup-password" class="form-control" placeholder="Password"/><br>
+            <button type="submit" class="btn btn-primary">Create account</button>
+        </form>
+    </div>
+</div>
 
 <script src="bundle.js"></script>
 </body>
