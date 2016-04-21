@@ -7,9 +7,11 @@ var signupForm = document.getElementById('signup-form');
 var loginButton = document.getElementById('login-button');
 var signupButton = document.getElementById('signup-button');
 
-document.getElementById('logout').addEventListener('click', function(){
-    login.logout();
-})
+if (document.getElementById('logout')) {
+    document.getElementById('logout').addEventListener('click', function(){
+        login.logout();
+    })
+}
 
 if (document.getElementById('login-form')) {
     loginForm.addEventListener('submit', function(e){
