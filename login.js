@@ -86,8 +86,8 @@ var Firebase = require('firebase');
         emailLogin(email, password);
         saveUser(authData, email.replace(/@.*/, ''));
       }
-      else{
-        console.log('yay')
+      else {
+        console.log("Error from ref.createUser in login.registerEmailUser:", error);
       }
     });
     //If no error, we still need to put the created user into our "users" table
