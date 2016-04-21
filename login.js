@@ -15,9 +15,12 @@ var Firebase = require('firebase');
           user = snapshot.val();
         });
         console.log(user.username || 'nothing');
+
+        window.user.setId(authData.uid);
         
       } else {
         console.log("Client unauthenticated.")
+        window.user.setId('please sign in');
       }
     }
     

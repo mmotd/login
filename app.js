@@ -1,4 +1,5 @@
 var login = require('./login');
+user = require('./user'); //@todo should not be global
 
 login.init('http://mmotd-login.firebaseio.com');
 
