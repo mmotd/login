@@ -6,21 +6,25 @@
 </head>
 <body>
 <a href="index.html">Home</a>
-<a href="#" class="form-show show-login">Login</a>
-<a href="#" class="form-show show-signup">Signup</a>
+
+<br>
+<h2>Sign in with your email address</h2>
+<form id="login-form" class="form">
+    <input type="text" name="login-email" placeholder="Enter your email"/><br>
+    <input type="password" name="login-password" placeholder="Password"/><br>
+    <button type="submit">Sign in</button>
+</form>
+
+<br>
+<h2>Create account</h2>
+<form id="signup-form" class="form">
+    <input type="text" name="signup-email" placeholder="Enter your email"/><br>
+    <input type="password" name="signup-password" placeholder="Password"/><br>
+    <button type="submit">Create account</button>
+</form>
+
+<br>
 <button id="logout">Logout</button>
-
-<form id="login-form" class="hidden form">
-    <input type="text" name="login-email"/>
-    <input type="password" name="login-password"/>
-    <button type="submit">Login</button>
-</form>
-
-<form id="signup-form" class="hidden form">
-    <input type="text" name="signup-email"/>
-    <input type="password" name="signup-password"/>
-    <button type="submit">Signup</button>
-</form>
 
 <script src="bundle.js"></script>
 </body>

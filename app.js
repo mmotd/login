@@ -11,16 +11,6 @@ document.getElementById('logout').addEventListener('click', function(){
     login.logout();
 })
 
-document.querySelector('.show-login').addEventListener('click', function(){
-    loginForm.classList.remove('hidden');
-    signupForm.classList.add('hidden');
-});
-
-document.querySelector('.show-signup').addEventListener('click', function(){
-    signupForm.classList.remove('hidden');
-    loginForm.classList.add('hidden');
-});
-
 loginForm.addEventListener('submit', function(e){
     e.preventDefault();
     login.emailLogin(
