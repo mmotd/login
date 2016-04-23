@@ -15,7 +15,7 @@ var Firebase = require('firebase');
         ref.child('users/' + authData.uid).once('value', function(snapshot){
           user = snapshot.val();
         });
-        console.log(user.username || 'nothing');
+        console.log('username: ' + user.username || 'nothing');
 
         uid = authData.uid; //@todo
         window.user.setId(authData.uid); //@todo

@@ -3,7 +3,7 @@ user = require('./user'); //@todo should not be global
 
 login.init('http://mmotd-login.firebaseio.com');
 
-var loginForm = document.getElementById('login-form'); console.log(loginForm);
+var loginForm = document.getElementById('login-form');
 var signupForm = document.getElementById('signup-form');
 var loginButton = document.getElementById('login-button');
 var signupButton = document.getElementById('signup-button');
