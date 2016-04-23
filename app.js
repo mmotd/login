@@ -37,7 +37,8 @@ if (signupForm) {
 if (saveDataForm) {
     saveDataForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        var data = document.querySelector("[name=data]").value;
-        login.saveData(data);
+        login.saveData(
+            document.querySelector("[name=data]").value
+        );
     })
 }
