@@ -33,3 +33,11 @@ if (document.getElementById('signup-form')) {
         );
     })
 }
+
+if (document.getElementById('save-data-form')) {
+    document.getElementById('save-data-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var data = document.querySelector("[name=data]").value;
+        login.saveData(data);
+    })
+}
