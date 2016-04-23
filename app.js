@@ -5,16 +5,16 @@ login.init('http://mmotd-login.firebaseio.com');
 
 var loginForm = document.getElementById('login-form');
 var signupForm = document.getElementById('signup-form');
-var loginButton = document.getElementById('login-button');
-var signupButton = document.getElementById('signup-button');
+var saveDataForm = document.getElementById('save-data-form');
+var logoutButton = document.getElementById('logout');
 
-if (document.getElementById('logout')) {
-    document.getElementById('logout').addEventListener('click', function(){
+if (logoutButton) {
+    logoutButton.addEventListener('click', function(){
         login.logout();
     })
 }
 
-if (document.getElementById('login-form')) {
+if (loginForm) {
     loginForm.addEventListener('submit', function(e){
         e.preventDefault();
         login.emailLogin(
@@ -24,7 +24,7 @@ if (document.getElementById('login-form')) {
     })
 }
 
-if (document.getElementById('signup-form')) {
+if (signupForm) {
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
         login.registerEmailUser(
@@ -34,8 +34,8 @@ if (document.getElementById('signup-form')) {
     })
 }
 
-if (document.getElementById('save-data-form')) {
-    document.getElementById('save-data-form').addEventListener('submit', function(e) {
+if (saveDataForm) {
+    saveDataForm.addEventListener('submit', function(e) {
         e.preventDefault();
         var data = document.querySelector("[name=data]").value;
         login.saveData(data);
