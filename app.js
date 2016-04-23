@@ -3,18 +3,18 @@ user = require('./user'); //@todo should not be global
 
 login.init('http://mmotd-login.firebaseio.com');
 
-var loginForm = document.getElementById('login-form'); console.log(loginForm);
+var loginForm = document.getElementById('login-form');
 var signupForm = document.getElementById('signup-form');
-var loginButton = document.getElementById('login-button');
-var signupButton = document.getElementById('signup-button');
+var saveDataForm = document.getElementById('save-data-form');
+var logoutButton = document.getElementById('logout');
 
-if (document.getElementById('logout')) {
-    document.getElementById('logout').addEventListener('click', function(){
+if (logoutButton) {
+    logoutButton.addEventListener('click', function(){
         login.logout();
     })
 }
 
-if (document.getElementById('login-form')) {
+if (loginForm) {
     loginForm.addEventListener('submit', function(e){
         e.preventDefault();
         login.emailLogin(
@@ -24,12 +24,20 @@ if (document.getElementById('login-form')) {
     })
 }
 
-if (document.getElementById('signup-form')) {
+if (signupForm) {
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
         login.registerEmailUser(
             document.querySelector("[name=signup-email]").value,
             document.querySelector("[name=signup-password]").value
         );
+    })
+}
+
+if (saveDataForm) {
+    saveDataForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var data = document.querySelector("[name=data]").value;
+        login.saveData(data);
     })
 }

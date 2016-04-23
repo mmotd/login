@@ -1,6 +1,7 @@
 var Firebase = require('firebase');
 
   var ref;
+  var uid; //@todo should be separate user class
   
   function init(url, handler){
     ref = new Firebase(url);
@@ -14,19 +15,28 @@ var Firebase = require('firebase');
         ref.child('users/' + authData.uid).once('value', function(snapshot){
           user = snapshot.val();
         });
-        console.log(user.username || 'nothing');
+        console.log('username: ' + user.username || 'nothing');
 
-        window.user.setId(authData.uid);
+        uid = authData.uid; //@todo
+        window.user.setId(authData.uid); //@todo
         
       } else {
         console.log("Client unauthenticated.")
-        window.user.setId('please sign in');
+        uid = false; //@todo
+        window.user.setId('please sign in'); //@todo
       }
     }
     
     //Event listener for changes in authentication
     //authHandler should be passed into this library for custom handling
     ref.onAuth(authHandler);
+  }
+
+  function saveData(data) {
+    ref.child('data').push({
+      user_id: uid,
+      data: data
+    });
   }
   
   /**
@@ -113,3 +123,4 @@ exports.init = init;
 exports.registerEmailUser = registerEmailUser;
 exports.emailLogin = emailLogin;
 exports.logout = logout;
+exports.saveData = saveData;
